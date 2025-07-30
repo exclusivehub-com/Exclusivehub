@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Left Fixed Image Panel */
+.left {
+  flex: 1;
+  position: relative;
+  min-width: 40%;
+  max-width: 50%;
+  overflow: hidden;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.overlay-text {
+  position: absolute;
+  color: white;
+  bottom: 30px;
+  left: 30px;
+  text-shadow: 0 0 10px black;
+}
+
+.overlay-text h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.overlay-text p {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+/* Right Scrollable Section */
+.right {
+  flex: 1;
+  background-color: black;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.video-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.video-card {
+  background-color: #111;
+  padding: 10px;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.video-card:hover {
+  transform: scale(1.02);
+}
+
+.video-card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.video-card p {
+  color: white;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left {
+    height: 50vh;
+    max-width: 100%;
+  }
+
+  .right {
+    height: 50vh;
+    padding: 10px;
+  }
+}
